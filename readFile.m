@@ -29,7 +29,7 @@ function [DATA] = readFile(FILENAME)
 		DATA = [datenum(DATA{1}) DATA{2}]; % Octave bug #36563
 	catch ME
 		disp('The data is malformed!');
-		DATA = -1;
+
 		return;
 	end
 
