@@ -24,15 +24,20 @@ function [DATA] = readFile(FILENAME)
 
     % Get the data using textscan
 	DATA = textscan(FID, D,'Delimiter',',', 'HeaderLines', 1);
-	DATA = [datenum(DATA{1}) DATA{2}]; % Octave bug #36563
+
+	try
+		DATA = [datenum(DATA{1}) DATA{2}]; % Octave bug #36563
+	catch ME
+		disp('The data is malformed!');
+		DATA = -1;
+		return;
+	end
 
 	% close the file
 	fclose(FID);
-
-end
 
 %{
 	Sample usage:
 	FILENAME = input('Type the name of the data set: ', 's');
 	DATA = readFile(FILENAME);
-}
+%}
