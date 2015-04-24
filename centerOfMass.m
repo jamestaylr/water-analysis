@@ -1,3 +1,4 @@
+function [CMASS] = centerOfMass(COMPLEMENT, DATA)
 
 NUMSUM = 0;
 DENOSUM = 0;
