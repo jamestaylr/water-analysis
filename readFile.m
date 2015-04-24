@@ -26,7 +26,14 @@ end
 DATA = textscan(FID, D, 'Delimiter', ',', 'HeaderLines', 1);
 
 try
-    DATA = [datenum(DATA{1}) DATA{2}]; % Octave bug #36563
+	A = datenum(DATA{1});
+
+	for j=2:1:L
+		A = horzcat(A, DATA{j}); % Octave bug #36563
+	end
+	
+	DATA = A;
+
 catch ME
     disp('The data is malformed!');
  
