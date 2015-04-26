@@ -1,16 +1,10 @@
-Data1 = readFile('sample-data/precipitation-data/data-1.csv');
-Data2 = readFile('sample-data/precipitation-data/data-2.csv');
-Data3 = readFile('sample-data/precipitation-data/data-3.csv');
+% Read in the data files
+DATA1 = readFile('sample-data/precipitation-data/data-1.csv');
+DATA2 = readFile('sample-data/precipitation-data/data-2.csv');
+DATA3 = readFile('sample-data/precipitation-data/data-3.csv');
 
-Y = vertcat(Data1(:,2), Data2(:,2), Data3(:,2));
-X = vertcat(Data1(:,1), Data2(:,1), Data3(:,1));
+% Combine all the data sets
+DATA = combine(DATA1, DATA2, DATA3);
 
-disp(size(X));
-disp(size(Y));
-disp(size(horzcat(X, Y)));
-B = horzcat(X, Y);
 
-E = findMultipleEvents(B(:,2), 0.0001);
-
-disp(E);
 
