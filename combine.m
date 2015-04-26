@@ -1,6 +1,6 @@
 function [COMBINED] = combine(varargin)
 
-	% Extracts the dimenions of the first cell
+	% Extracts the dimensions of the first cell
 	[m n] = size(varargin{1});
     B = [];
    
