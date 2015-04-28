@@ -31,7 +31,7 @@ plot(PH_DATA(:,1), m(:),'g');
 [START, END, DURATION] = findLongestDuration(PH_DATA(:, 5), UpAThresh, true);
 
 % Print out the upper acute pH values
-fprintf('>> Acute upper pH properties\n', i);
+fprintf('>> Acute upper pH properties\n');
 UpAThresh_R = findMultipleEvents(y, UpAThresh, true);
 [m n] = size(UpAThresh_R);
 for i = 1:1:m
@@ -41,7 +41,7 @@ for i = 1:1:m
 end
 
 % Print out the lower acute pH values
-fprintf('>> Acute lower pH properties\n', i);
+fprintf('>> Acute lower pH properties\n');
 LowAThresh_R = findMultipleEvents(y, LowAThresh, false);
 [m n] = size(LowAThresh_R);
 for i = 1:1:m
@@ -51,7 +51,7 @@ for i = 1:1:m
 end
 
 % Print out the upper chronic pH values
-fprintf('>> Chronic upper pH properties\n', i);
+fprintf('>> Chronic upper pH properties\n');
 UpCThresh_R = findMultipleEvents(y, UpCThresh, true);
 [m n] = size(UpCThresh_R);
 for i = 1:1:m
@@ -61,7 +61,7 @@ for i = 1:1:m
 end
 
 % Print out the lower chronic pH values
-fprintf('>> Chronic lower pH properties\n', i);
+fprintf('>> Chronic lower pH properties\n');
 LowCThresh_R = findMultipleEvents(y, LowCThresh, false);
 [m n] = size(LowCThresh_R);
 for i = 1:1:m

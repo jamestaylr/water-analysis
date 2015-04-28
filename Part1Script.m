@@ -25,4 +25,3 @@ PEAK_INTENSITY = max(DATA(:,1));
 
 fprintf('\nThe peak intensity calculated from the rainfall data is %0.2f\n', PEAK_INTENSITY);
 fprintf('\nThe volume calculated from the rainfall during the duration of the storm is %0.2f\n', VOLUME);
-

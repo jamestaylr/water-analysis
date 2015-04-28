@@ -32,4 +32,5 @@ function RESULT = findMultipleEvents(DATA, THRESHOLD, UP)
         i = i + 1;
 
 	end
+	
 end
