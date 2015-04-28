@@ -1,7 +1,7 @@
 function [DATA] = truncateData(RAW, LOWER_BOUNDS, UPPER_BOUNDS)
 
 % Iterate over the entire data set
-for i = 0:1:length(RAW)
+for i = 1:1:length(RAW)
  
     % If the value is greater than the upper bounds of the data, set it equal to the upper bound
     if (RAW(i) > UPPER_BOUNDS)
