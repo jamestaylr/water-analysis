@@ -1,10 +1,26 @@
-function [EVENT,DURATION] = stormDuration (RAINFALL_DATA)
+function [START, END, DURATION] = stormDuration(RAINFALL_DATA)
 
-EVENT = RAINFALL_DATA > 0;
+% Make call the to the find multiple events function
+d = findMultipleEvents(RAINFALL_DATA, 0.00001);
 
-EVENT = [0 EVENT 0];
+% Intialize variables
+START = 0;
+END = 0;
+DURATION = 0;
 
-% Before the event before the storm ends
-BEFORE = find(diff(EVENT));
+% Cycle through the entire vector
+for k = 1:1:length(d)
 
-DURATION = BEFORE(2:2:end) - BEFORE(1:2:end);
+	% If the difference between between the indices is greater than the recorded difference
+	if ((d(k, 2) - d(k, 1)) > DURATION)
+		% Record the values
+		DURATION = d(k, 2) - d(k, 1);
+		START = d(k, 1);
+		END = d(k, 2);
+	end
+end
+
+%{
+Sample usage:
+[START, END, DURATION] = stormDuration(DATA(:, 2));
+%}
