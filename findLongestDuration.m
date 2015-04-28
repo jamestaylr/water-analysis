@@ -12,11 +12,16 @@ DURATION = 0;
 for k = 1:1:length(d)
 
 	% If the difference between between the indices is greater than the recorded difference
-	if ((d(k, 2) - d(k, 1)) > DURATION)
-		% Record the values
-		DURATION = d(k, 2) - d(k, 1);
-		START = d(k, 1);
-		END = d(k, 2);
+
+	try
+		if ((d(k, 2) - d(k, 1)) > DURATION)
+			% Record the values
+			DURATION = d(k, 2) - d(k, 1);
+			START = d(k, 1);
+			END = d(k, 2);
+		end
+	catch ME
+		break
 	end
 end
 
