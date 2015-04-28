@@ -1,7 +1,7 @@
-function [EVENT,DURATION] = stormDuration ((DATA(:,1)), DATA(:,2))
+function [EVENT,DURATION] = stormDuration (RAINFALL_DATA)
 %Event is the storm. DATA(:,1) is the first column, time, and
 %DATA(:,2) is the rainfall data in the second column
-EVENT = DATA(:,2) > 0;
+EVENT = RAINFALL_DATA > 0;
 
 EVENT = [0 EVENT 0];
 
