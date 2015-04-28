@@ -26,4 +26,3 @@ DATA = combine(Data1, Data1);
 
 Note: This function takes a variable number of arguments
 %}
-

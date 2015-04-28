@@ -1,7 +1,7 @@
-function [START, END, DURATION] = findLongestDuration(DATA, THRESHOLD)
+function [START, END, DURATION] = findLongestDuration(DATA, THRESHOLD, UP)
 
 % Make call the to the find multiple events function
-d = findMultipleEvents(DATA, THRESHOLD);
+d = findMultipleEvents(DATA, THRESHOLD, UP);
 
 % Intialize variables
 START = 0;
