@@ -1,7 +1,7 @@
-function [START, END, DURATION] = stormDuration(RAINFALL_DATA)
+function [START, END, DURATION] = findLongestDuration(DATA, THRESHOLD)
 
 % Make call the to the find multiple events function
-d = findMultipleEvents(RAINFALL_DATA, 0.00001);
+d = findMultipleEvents(DATA, THRESHOLD);
 
 % Intialize variables
 START = 0;
@@ -22,5 +22,5 @@ end
 
 %{
 Sample usage:
-[START, END, DURATION] = stormDuration(DATA(:, 2));
+[START, END, DURATION] = findLongestDuration(DATA(:, 2), THRESHOLD);
 %}
