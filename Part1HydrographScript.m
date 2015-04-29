@@ -1,8 +1,10 @@
-% Read in the flow data
-DATA4 = readFile('sample-data/flow-data/data-1.csv');
-DATA5 = readFile('sample-data/flow-data/data-2.csv');
-DATA6 = readFile('sample-data/flow-data/data-3.csv');
-FLOW_DATA = combine(DATA4, DATA5, DATA6);
-TRUNCATED = truncateData(FLOW_DATA(:,2), 0, max(FLOW_DATA(:, 2)));
+% Part 1 Hydrograph
+% Begin working with stormwater runoff data and hydrograph
+FLOW_DATA = input('Please input the flow data you would like to run: ','s');
+FLOW_DATA = readFile(FLOW_DATA);
+FLOW_DATA(:,2) = truncateData(FLOW_DATA(:,2), 0, max(FLOW_DATA(:, 2)));
+[START, STOP, DURATION] = findLongestDuration(FLOW_DATA(:,2), 0, 0.0001);
 
-plot(FLOW_DATA(:,1), TRUNCATED);
+%Smooth duration graph
+[FLOW_DATA(:,1), FLOW_DATA(:,2)] = smoothData(FLOW_DATA(START:STOP,1), FLOW_DATA(START:STOP,2), 20);
+plot(FLOW_DATA(:,1),FLOW_DATA(:,2))
