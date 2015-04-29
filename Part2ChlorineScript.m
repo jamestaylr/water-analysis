@@ -9,6 +9,9 @@ CONVERTED = .33.*CHLORINE_DATA(:,7);
 
 % Plot the chlorine data
 plot(CHLORINE_DATA(:,1), CONVERTED);
+xlabel('Time in Five Minute Intervals')
+ylabel('Chloride Concentration (mg/L)')
+title('Chloride Concentration Plot')
 hold on;
 
 % Create linear space to act as the constant threshold
