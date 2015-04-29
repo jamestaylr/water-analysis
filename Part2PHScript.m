@@ -13,6 +13,9 @@ LowCThresh = input('Type a lower, Chronic (over time) threshold value: ');
 [x y] = smoothData(PH_DATA(:,1), PH_DATA(:,5), 30);
 
 plot(x,y);
+xlabel('Time in Five Minute Internals')
+ylabel('pH')
+title('Pollutograph for Fish')
 hold on;
 
 % Create linear space to act as the constant threshold
