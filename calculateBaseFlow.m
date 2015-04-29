@@ -1,9 +1,9 @@
 function [BASE_FLOW] = calculateBaseFlow(DATA)
 
-	MEDIAN = median(DATA);
+	MODE = mode(DATA);
 	STD = std(DATA);
 
-	DATA = DATA(DATA<MEDIAN+STD);
-	DATA = DATA(DATA>MEDIAN-STD);
+	DATA = DATA(DATA < MODE + STD);
+	DATA = DATA(DATA > MODE - STD);
 
 	BASE_FLOW = mean(DATA);
