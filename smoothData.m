@@ -11,9 +11,7 @@ SMOOTHED = [];
 % Iterates over the rows of the matrix and takes the average of each row
 for j = 1:1:size(J)[1];
     try
-     
         SMOOTHED = [SMOOTHED; mean(J(j, :))];
-     
     catch ME
         % Throws an error exception if the data cannot be averaged
         disp('The data is malformed! It cannot be averaged!');
