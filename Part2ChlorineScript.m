@@ -25,6 +25,6 @@ RESULTS = findMultipleEvents(CHLORINE_DATA(:, 7), THRESHOLD, true);
 % Loop through all the rows of the response matrix
 for i = 1:1:m
 	fprintf('For region %d:\n', i)
-	fprintf('The peak chlorine concentration is %0.4f\n', max(CHLORINE_DATA(RESULTS(i:1):RESULTS(i:2),7)));
+	fprintf('The peak chlorine concentration is %0.4f\n', max(CHLORINE_DATA(RESULTS(i,1):RESULTS(i,2),7)));
 	fprintf('Duration of the event: %d minutes\n\n', (RESULTS(i,2) - RESULTS(i,1)) * 5);
 end
