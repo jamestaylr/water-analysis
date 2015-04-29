@@ -7,7 +7,7 @@ while ~flag
 	
 	if PART == 1
 		flag = true;
-	    run Part2ChlorineScript;
+	    run Part2ChlorideScript;
 	    break;
 
 	elseif PART == 2

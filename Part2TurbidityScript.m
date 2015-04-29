@@ -7,7 +7,7 @@ TURBIDITY_DATA = readFile('sample-data/water-quality-data/data.csv');
 ATHRESHOLD = input('Type an acute (one time) threshold value: ');
 CTHRESHOLD = input('Type a chronic (over time) threshold value: ');
 
-% Plot the chlorine data
+% Plot the turbidity data
 plot(TURBIDITY_DATA(:,1), TURBIDITY_DATA(:,4));
 xlabel('Time in Five Minute Intervals')
 ylabel('Turbidity (NTU)')
