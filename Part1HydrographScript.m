@@ -12,6 +12,7 @@ BASE_FLOW = calculateBaseFlow(FLOW_DATA(:,2));
 [X, Y] = smoothData(FLOW_DATA(:,1), FLOW_DATA(:,2), 40);
 hold on
 plot(X, Y, '-', X, BASE_FLOW, ':');
+formatTime(X);
 hold off
 title('Hydrograph: Flow Rate')
 xlabel('Time[sec]')
