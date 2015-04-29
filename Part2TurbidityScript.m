@@ -9,6 +9,9 @@ CTHRESHOLD = input('Type a chronic (over time) threshold value: ');
 
 % Plot the chlorine data
 plot(TURBIDITY_DATA(:,1), TURBIDITY_DATA(:,4));
+xlabel('Time in Five Minute Intervals')
+ylabel('Turbidity (NTU)')
+title('Pollutograph for Invertebrate')
 hold on;
 
 % Create linear space to act as the constant threshold
