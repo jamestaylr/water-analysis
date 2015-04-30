@@ -22,7 +22,7 @@ ylabel('Intensity [in/hr]');
 title('Hyetograph: Rainfall Intensity');
 
 PEAK_INTENSITY = max(INTENSITY);
-VOLUME = (sum(INTENSITY.*.254*AREA*100000)/60);
+VOLUME = (sum(INTENSITY)*(1/12)*(0.0254)*(DURATION)*(AREA));
 COM = centerOfMass(PRECIPITATION_DATA(:,1), PRECIPITATION_DATA(:,2));
 
 fprintf('The duration of the rainstorm event is %0.2f minutes.\n', DURATION);
