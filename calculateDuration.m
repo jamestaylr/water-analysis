@@ -1,4 +1,4 @@
-function [DURATION] = calculateDuration(INTENSITY)
+function [DURATION, START, STOP] = calculateDuration(INTENSITY)
 
 	START = 0;
 	STOP = 0;
