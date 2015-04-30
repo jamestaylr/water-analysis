@@ -1,4 +1,8 @@
-Go back and add graph of raw precipitation data.
+# Team notes and checklists
 
-Not doing one event, need to include all data from one file. If there is more than one rain event, we need to include any data(events) that would contribute to the flow. So we need to create a function that will exclude the data that would be considered an outlier for that one event. She said the logic wasn't really there. We shouldn't do the "find longest duration" because it would correlate with the flow data. The one event in the "find longest duration" may not be the only data that contributes to the flow.
-If it stopped raining for 30 minutes but started raining again, that would contribute to the flow would it not?
+Things to check before the final presentation:
+ 1. Hydrograph and Hyteograph volume calculations
+ 2. Run off ratio calculations
+ 3. Time misalignment on axis
+ 4. Unifying scripts
+ 5. Implementing the event detection in the rain calculations
