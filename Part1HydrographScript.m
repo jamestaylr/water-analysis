@@ -23,3 +23,5 @@ fprintf('The baseflow of the data is %0.4f\n', BASE_FLOW);
 [m i] = max(FLOW_DATA(:,2));
 PEAK_FLOW = FLOW_DATA(i:i, 1);
 fprintf('The peak flow of the data is %0.4f\n', PEAK_FLOW);
+VOLUME = (sum(FLOW_DATA(:,2))*5)- (BASE_FLOW.*length(FLOW_DATA(:,2)));
+fprintf('The volume of the hydrograph omitting the baseflow: %0.2f [meters^3]\n', VOLUME);
