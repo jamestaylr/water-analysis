@@ -1,5 +1,5 @@
 % Repeat the loop until an acceptable number is entered
-flag = false
+flag = false;
 
 while ~flag
 	% Prompt the user for the data parameter to display
