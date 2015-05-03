@@ -2,10 +2,10 @@
 clf;
 
 % Prompt the user for the rainfall data
-DATA = input('Please input the rainfall data you would like to analyze: ','s');
+PRECIPITATION_DATA_NAME = input('Please input the rainfall data you would like to analyze: ','s');
 AREA = input('Please input the area of the watershed in km^2 (Webb Branch is 2.78km^2):');
 
-PRECIPITATION_DATA = readFile(DATA);
+PRECIPITATION_DATA = readFile(PRECIPITATION_DATA_NAME);
 INTENSITY = PRECIPITATION_DATA(:,2) .* 60;
 INTENSITY = truncateData(INTENSITY, 0, max(INTENSITY));
 

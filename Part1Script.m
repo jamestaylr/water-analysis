@@ -7,7 +7,7 @@ fprintf('\n>> Hydrograph Calculations:\n');
 fprintf('The baseflow of the data is %0.4f\n', BASE_FLOW);
 fprintf('The peak flow of the data is %0.4f\n', MAX_FLOW);
 fprintf('The volume of the hydrograph omitting the baseflow: %0.2f [meters^3]\n', VOLUME_HYDROGRAPH);
-fprintf('The flow event started at %0.2f and ended at %0.2f, with a peak flow at time %0.2f.\n', FLOW_START, FLOW_END, FLOW_DATA(i:i, 1));
+fprintf('The flow event started at %0.2f and ended at %0.2f, with a peak flow at time %0.2f.\n', FLOW_START, FLOW_END, MAX_FLOW_TIME);
 
 % Hyetograph Script
 fprintf('\n>> Hyetograph Calculations:\n');
