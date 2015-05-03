@@ -18,4 +18,4 @@ fprintf('The x coordinate of the center of mass is %0.2f.\n', MASS_CENTER);
 
 % Lag time calculations
 fprintf('\n>> Lag Time Calculations:\n');
-fprintf('\nLag time: %0.2f [hours]\n', (MAX_FLOW - MASS_CENTER) * 24);
+fprintf('Lag time: %0.2f [hours]\n', (MAX_FLOW_TIME - MASS_CENTER) * 24);
