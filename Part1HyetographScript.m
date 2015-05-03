@@ -1,6 +1,3 @@
-% Clear the figure window
-clf;
-
 % Prompt the user for the rainfall data
 PRECIPITATION_DATA_NAME = input('Please input the rainfall data you would like to analyze: ','s');
 AREA = input('Please input the area of the watershed in km^2 (Webb Branch is 2.78km^2): ');
@@ -11,6 +8,8 @@ INTENSITY = truncateData(INTENSITY, 0, max(INTENSITY));
 
 X = PRECIPITATION_DATA(:,1);
 
+% Plots the data in a new figure window
+figure;
 bar(X, INTENSITY, 20);
 formatTime(X); 
 xlabel('Time[min]');
