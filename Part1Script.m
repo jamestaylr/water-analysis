@@ -24,3 +24,8 @@ fprintf('The center of mass is %0.2f.\n', MASS_CENTER);
 % Lag time calculations
 fprintf('\n>> Lag Time Calculations:\n');
 fprintf('Lag time: %0.2f [hours]\n', (MAX_FLOW_TIME - MASS_CENTER) * 24);
+
+% Runoff calculations
+RUNOFF = (VOLUME_HYDROGRAPH / VOLUME_HYETOGRAPH)*100;
+fprintf('\n>> Runoff Calculations:\n');
+fprintf('Runoff: %0.2f percent\n', RUNOFF);
