@@ -23,7 +23,7 @@ legend('Flow Rate','Baseflow');
 VOLUME = (sum(FLOW_DATA(:,2))*30) - (BASE_FLOW * length(FLOW_DATA(:,1)));
 [m, i] = max(FLOW_DATA(:,2));
 
-[DURATION, FLOW_START, FLOW_END] = calculateDuration(FLOW_DATA(:,2))
+[DURATION, FLOW_START, FLOW_END] = calculateDuration(FLOW_DATA(:,2));
 
 fprintf('The baseflow of the data is %0.4f\n', BASE_FLOW);
 fprintf('The peak flow of the data is %0.4f\n', m);
