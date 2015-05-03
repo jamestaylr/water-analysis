@@ -7,14 +7,19 @@ fprintf('\n>> Hydrograph Calculations:\n');
 fprintf('The baseflow of the data is %0.4f\n', BASE_FLOW);
 fprintf('The peak flow of the data is %0.4f\n', MAX_FLOW);
 fprintf('The volume of the hydrograph omitting the baseflow: %0.2f [meters^3]\n', VOLUME_HYDROGRAPH);
-fprintf('The flow event started at %0.2f and ended at %0.2f, with a peak flow at time %0.2f.\n', FLOW_START, FLOW_END, MAX_FLOW_TIME);
+fprintf('The flow event started at %s and ended at %s, with a peak flow at time %s.\n',...
+    datestr(FLOW_DATA(FLOW_START:FLOW_START,1), 'mmmm dd, HH:MM PM'), datestr(FLOW_DATA(FLOW_END:FLOW_END,1),...
+    'mmmm dd, HH:MM PM'), datestr(MAX_FLOW_TIME, 'mmmm dd, HH:MM PM'));
 
 % Hyetograph Script
 fprintf('\n>> Hyetograph Calculations:\n');
-fprintf('The duration of the rainstorm event is %0.2f minutes.\n', DURATION_HYETOGRAPH);
+fprintf('The duration of the rainstorm event started at %s and ended at %s.\n',...
+    datestr(PRECIPITATION_DATA(HYETOGRAPH_START:HYETOGRAPH_START,1), 'mmmm dd, HH:MM PM'), ...
+    datestr(PRECIPITATION_DATA(HYETOGRAPH_END:HYETOGRAPH_END,1), 'mmmm dd, HH:MM PM'));
+fprintf('The total duration of the rainstorm event is %0.1f.\n', DURATION_HYETOGRAPH);
 fprintf('The peak intensity calculated from the rainfall data is %0.2f inches per hour.\n', PEAK_INTENSITY);
 fprintf('The volume calculated from the rainfall during the duration of the storm is %0.2f meters cubed.\n', VOLUME_HYETOGRAPH);
-fprintf('The x coordinate of the center of mass is %0.2f.\n', MASS_CENTER);
+fprintf('The center of mass is %0.2f.\n', MASS_CENTER);
 
 % Lag time calculations
 fprintf('\n>> Lag Time Calculations:\n');
