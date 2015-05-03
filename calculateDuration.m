@@ -17,4 +17,5 @@ function [DURATION, START, STOP] = calculateDuration(INTENSITY)
 	        break;
 	    end
 	end
+	
 	DURATION = (STOP - START) * 5;
