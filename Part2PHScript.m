@@ -37,8 +37,6 @@ legend([p1 p2 p3], 'pH Data', 'Acute Threshold', 'Chronic Threshold');
 
 [START, END, DURATION] = findLongestDuration(PH_DATA(:, 5), UpAThresh, true);
 
-fprintf('\n');
-
 % Print out the upper acute pH values
 UpAThresh_R = findMultipleEvents(y, UpAThresh, true);
 [m, n] = size(UpAThresh_R);
@@ -53,7 +51,7 @@ else
 	end
 end
 
-
+fprintf('\n');
 
 % Print out the lower acute pH values
 LowAThresh_R = findMultipleEvents(y, LowAThresh, false);
@@ -65,9 +63,11 @@ else
 	for i = 1:1:m
 		fprintf('For the given data: ');
 		fprintf('The low pH concentration is %0.4f\n', max(PH_DATA(LowAThresh_R(i:1):LowAThresh_R(i:2),5)));
-		fprintf('Duration of the event: %d minutes\n\n', (LowAThresh_R(i,2) - LowAThresh_R(i,1)) * 5);
+		fprintf('Duration of the event: %d minutes\n', (LowAThresh_R(i,2) - LowAThresh_R(i,1)) * 5);
 	end
 end
+
+fprintf('\n');
 
 % Print out the upper chronic pH values
 UpCThresh_R = findMultipleEvents(y, UpCThresh, true);
@@ -79,9 +79,11 @@ else
 	for i = 1:1:m
 		fprintf('For the given data: ');
 		fprintf('The peak pH concentration is %0.4f\n', max(PH_DATA(UpCThresh_R(i:1):UpCThresh_R(i:2),5)));
-		fprintf('Duration of the event: %d minutes\n\n', (UpCThresh_R(i,2) - UpCThresh_R(i,1)) * 5);
+		fprintf('Duration of the event: %d minutes\n', (UpCThresh_R(i,2) - UpCThresh_R(i,1)) * 5);
 	end
 end
+
+fprintf('\n');
 
 % Print out the lower chronic pH values
 LowCThresh_R = findMultipleEvents(y, LowCThresh, false);
@@ -93,6 +95,8 @@ else
 	for i = 1:1:m
 		fprintf('For the given data: ');
 		fprintf('The low pH concentration is %0.4f\n', max(PH_DATA(LowCThresh_R(i:1):LowCThresh_R(i:2),5)));
-		fprintf('Duration of the event: %d minutes\n\n', (LowCThresh_R(i,2) - LowCThresh_R(i,1)) * 5);
+		fprintf('Duration of the event: %d minutes\n', (LowCThresh_R(i,2) - LowCThresh_R(i,1)) * 5);
 	end
 end
+
+fprintf('\n');

@@ -27,5 +27,6 @@ RESULTS = findMultipleEvents(CONVERTED, THRESHOLD, true);
 
 [m, n] = size(RESULTS);
 
+% Print out the times where the values were greater than the threshold and the peak values
 fprintf('Total time Specific Conductivity was greater than the threshold: %d [minutes]\n', (RESULTS(:,2) - RESULTS(:,1)) * 5);
 fprintf('Total peaks exceeding the threshold conductivity values: %d\n\n', m);

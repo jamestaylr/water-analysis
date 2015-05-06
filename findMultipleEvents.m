@@ -34,3 +34,8 @@ function RESULT = findMultipleEvents(DATA, THRESHOLD, UP)
 	end
 	
 end
+
+%{
+Sample usage:
+RESULTS = findMultipleEvents(DATA(:, 4), THRESHOLD, true);
+%}

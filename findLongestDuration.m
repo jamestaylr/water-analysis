@@ -12,7 +12,6 @@ DURATION = 0;
 for k = 1:1:length(d)
 
 	% If the difference between between the indices is greater than the recorded difference
-
 	try
 		if ((d(k, 2) - d(k, 1)) > DURATION)
 			% Record the values
@@ -21,7 +20,7 @@ for k = 1:1:length(d)
 			END = d(k, 2);
 		end
 	catch ME
-		break
+		break;
 	end
 end
 

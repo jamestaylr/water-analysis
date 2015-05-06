@@ -23,6 +23,6 @@ Sample usage:
 Data1 = readFile('data-1');
 Data2 = readFile('data-2');
 DATA = combine(Data1, Data1);
-
-Note: This function takes a variable number of arguments
+>> This function takes a variable number of arguments
+>> This function is deprecated in the current project build
 %}
