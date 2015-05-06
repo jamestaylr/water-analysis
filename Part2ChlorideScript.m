@@ -27,6 +27,5 @@ RESULTS = findMultipleEvents(CONVERTED, THRESHOLD, true);
 
 [m, n] = size(RESULTS);
 
-fprintf('For the given data:\n')
-fprintf('The peak chloride concentration is %0.2f\n', max(CONVERTED(RESULTS(:,1):RESULTS(:,2))));
-fprintf('Total time Specific Conductivity was greater than the threshold: %d minutes\n\n', (RESULTS(:,2) - RESULTS(:,1)) * 5);
+fprintf('Total time Specific Conductivity was greater than the threshold: %d [minutes]\n', (RESULTS(:,2) - RESULTS(:,1)) * 5);
+fprintf('Total peaks exceeding the threshold conductivity values: %d\n\n', n);
