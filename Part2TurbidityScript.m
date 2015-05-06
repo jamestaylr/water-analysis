@@ -1,12 +1,12 @@
-% Clear the figure window
-clf
-
 % Import the data from the file
-TURBIDITY_DATA_NAME = input('Please input the data you would like to analyze:','s');
+TURBIDITY_DATA_NAME = input('Please input the quantitative analysis data for water quality: ', 's');
 TURBIDITY_DATA = readFile(TURBIDITY_DATA_NAME);
 
 ATHRESHOLD = input('Identify the acute threshold value: ');
 CTHRESHOLD = input('Identify the chronic threshold value: ');
+
+% Clear the figure window
+clf;
 
 % Plot the turbidity data
 plot(TURBIDITY_DATA(:,1), TURBIDITY_DATA(:,4));
@@ -28,7 +28,7 @@ formatTime(TURBIDITY_DATA(:,1));
 ATHRESHOLD_R = findMultipleEvents(TURBIDITY_DATA(:, 4), ATHRESHOLD, true);
 [m, n] = size(ATHRESHOLD_R);
 
-fprintf('For the acute threshold:\n');
+fprintf('\nFor the acute threshold:\n');
 fprintf('Total time turbidity was greater than %d: %d [minutes]\n', ATHRESHOLD, sum(ATHRESHOLD_R(:,2)) - sum(ATHRESHOLD_R(:,1)));
 fprintf('Total peaks exceeding the acute threshold turbidity values: %d\n\n', m);
 
@@ -37,5 +37,5 @@ CTHRESHOLD_R = findMultipleEvents(TURBIDITY_DATA(:, 4), CTHRESHOLD, true);
 [o, p] = size(CTHRESHOLD_R);
 
 fprintf('For the chronic threshold:\n');
-fprintf('Total time turbidity was greater than %d: %d [minutes]\n', CTHRESHOLD_R, sum(CTHRESHOLD_R(:,2)) - sum(CTHRESHOLD_R(:,1)));
+fprintf('Total time turbidity was greater than %d: %d [minutes]\n', CTHRESHOLD, sum(CTHRESHOLD_R(:,2)) - sum(CTHRESHOLD_R(:,1)));
 fprintf('Total peaks exceeding the chronic threshold turbidity values: %d\n\n', o);
