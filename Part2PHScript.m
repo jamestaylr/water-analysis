@@ -12,9 +12,9 @@ LowCThresh = input('Identify the lower chronic threshold value: ');
 % Plot the PH data
 [x, y] = smoothData(PH_DATA(:,1), PH_DATA(:,5), 30);
 
-plot(x, y);
+p1 = plot(x, y);
 xlabel('Time')
-ylabel('pH')
+ylabel('pH Values')
 title('Pollutograph for Fish')
 hold on;
 formatTime(x);
@@ -26,10 +26,11 @@ m = linspace(LowCThresh, LowCThresh, length(PH_DATA(:,1)));
 
 
 % Plot the threshold lines
-plot(PH_DATA(:,1), j(:),'r');
-plot(PH_DATA(:,1), k(:),'r');
-plot(PH_DATA(:,1), l(:),'g');
-plot(PH_DATA(:,1), m(:),'g');
+p2 = plot(PH_DATA(:,1), j(:), 'r');
+plot(PH_DATA(:,1), k(:), 'r');
+p3 = plot(PH_DATA(:,1), l(:), 'g');
+plot(PH_DATA(:,1), m(:), 'g');
+legend([p1 p2 p3], 'pH Data', 'Acute Threshold', 'Chronic Threshold');
 
 [START, END, DURATION] = findLongestDuration(PH_DATA(:, 5), UpAThresh, true);
 
@@ -60,7 +61,6 @@ for i = 1:1:m
 	fprintf('Duration of the event: %d minutes\n\n', (UpCThresh_R(i,2) - UpCThresh_R(i,1)) * 5);
 end
 
-% Print out the lower chronic pH values
 LowCThresh_R = findMultipleEvents(y, LowCThresh, false);
 [m] = size(LowCThresh_R);
 for i = 1:1:m
@@ -68,3 +68,5 @@ for i = 1:1:m
 	fprintf('The low pH concentration is %0.4f\n', max(PH_DATA(LowCThresh_R(i:1):LowCThresh_R(i:2),5)));
 	fprintf('Duration of the event: %d minutes\n\n', (LowCThresh_R(i,2) - LowCThresh_R(i,1)) * 5);
 end
+
+% Print out the lower chronic pH values
