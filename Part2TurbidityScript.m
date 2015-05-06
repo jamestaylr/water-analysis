@@ -26,7 +26,7 @@ formatTime(TURBIDITY_DATA(:,1));
 
 % Find all the regions that the threshold is exceeded acute values
 ATHRESHOLD_R = findMultipleEvents(TURBIDITY_DATA(:, 4), ATHRESHOLD, true);
-[m] = size(ATHRESHOLD_R);
+[m n] = size(ATHRESHOLD_R);
 for i = 1:1:m
 	fprintf('For region %d:\n', i)
 	fprintf('The peak turbidty is %0.4f\n', max(TURBIDITY_DATA(ATHRESHOLD_R(i:1):ATHRESHOLD_R(i:2),5)));
@@ -35,9 +35,6 @@ end
 
 % Find all the regions that the threshold is exceeded chronic values
 CTHRESHOLD_R = findMultipleEvents(TURBIDITY_DATA(:, 4), CTHRESHOLD, true);
-[m] = size(CTHRESHOLD_R);
-for i = 1:1:m
-	fprintf('For region %d:\n', i)
-	fprintf('The peak turbidty is %0.4f\n', max(TURBIDITY_DATA(CTHRESHOLD_R(i:1):CTHRESHOLD_R(i:2),5)));
-	fprintf('Duration of the event: %d minutes\n\n', (CTHRESHOLD_R(i,2) - CTHRESHOLD_R(i,1)) * 5);
-end
+[m n] = size(CTHRESHOLD_R);
+
+
