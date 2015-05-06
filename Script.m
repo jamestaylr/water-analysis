@@ -1,7 +1,7 @@
 % Repeat the loop until an acceptable number is entered
 while true
 	% Prompt the user for the data parameter to display
-	PART = input('Would you like to test water quality or quantity? (1 = Water Quality, 2 = Water Quantity): ');
+	PART = input('Would you like to analyze quantity or quality data? (1 = Water Quantity, 2 = Water Quality): ');
 	
 	if PART == 1
 	    run Part1Script;
