@@ -3,21 +3,16 @@ flag = false;
 
 while ~flag
 	% Prompt the user for the data parameter to display
-	PART = input('Which water quantity parameter would you like to test? (1 = Chloride Concentration, 2 = PH, 3 = Turbidity): ');
+	PART = input('Would you like to test water quality or quantity? (1 = Water Quality, 2 = Water Quantity): ');
 	
 	if PART == 1
 		flag = true;
-	    run Part2ChlorideScript;
+	    run Part1Script;
 	    break;
 
 	elseif PART == 2
 		flag = true;
-	    run Part2PHScript;
-	    break;
-
-	elseif PART == 3
-		flag = true;
-	    run Part2TurbidityScript;
+	    run Part2Script;
 	    break;
 
 	else
