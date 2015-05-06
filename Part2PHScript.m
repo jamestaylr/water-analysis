@@ -18,6 +18,7 @@ ylabel('pH Values')
 title('Pollutograph for Fish')
 hold on;
 formatTime(x);
+
 % Create linear space to act as the constant threshold
 j = linspace(UpAThresh, UpAThresh, length(PH_DATA(:,1)));
 k = linspace(LowAThresh, LowAThresh, length(PH_DATA(:,1)));
@@ -61,6 +62,7 @@ for i = 1:1:m
 	fprintf('Duration of the event: %d minutes\n\n', (UpCThresh_R(i,2) - UpCThresh_R(i,1)) * 5);
 end
 
+% Print out the lower chronic pH values
 LowCThresh_R = findMultipleEvents(y, LowCThresh, false);
 [m] = size(LowCThresh_R);
 for i = 1:1:m
@@ -68,5 +70,3 @@ for i = 1:1:m
 	fprintf('The low pH concentration is %0.4f\n', max(PH_DATA(LowCThresh_R(i:1):LowCThresh_R(i:2),5)));
 	fprintf('Duration of the event: %d minutes\n\n', (LowCThresh_R(i,2) - LowCThresh_R(i,1)) * 5);
 end
-
-% Print out the lower chronic pH values
