@@ -12,7 +12,7 @@ X = PRECIPITATION_DATA(:,1);
 figure;
 bar(X, INTENSITY, 20);
 formatTime(X); 
-xlabel('Time[min]');
+xlabel('Time');
 ylabel('Intensity[in/hr]');
 title('Hyetograph: Rainfall Intensity');
 

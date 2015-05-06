@@ -19,7 +19,7 @@ fprintf('The duration of the rainstorm event started at %s and ended at %s.\n',.
 fprintf('The total duration of the rainstorm event is %0.1f [minutes].\n', DURATION_HYETOGRAPH);
 fprintf('The peak intensity calculated from the rainfall data is %0.2f [inches per hour].\n', PEAK_INTENSITY);
 fprintf('The volume calculated from the rainfall during the duration of the storm is %0.2f [meters cubed].\n', VOLUME_HYETOGRAPH);
-fprintf('The center of mass is %0.2f.\n', MASS_CENTER);
+fprintf('The center of mass is %0.2f.\n', datestr(MASS_CENTER, 'mmmm dd, HH:MM PM'));
 
 % Lag time calculations
 fprintf('\n>> Lag Time Calculations:\n');

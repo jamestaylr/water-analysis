@@ -17,7 +17,7 @@ plot(X, Y, '-', X, BASE_FLOW,':');
 formatTime(X);
 hold off;
 title('Hydrograph: Flow Rate')
-xlabel('Time [s]')
+xlabel('Time')
 ylabel('Flow Rate [m^3/s]')
 axis tight;
 legend('Flow Rate','Baseflow');
