@@ -1,12 +1,12 @@
-% Clear the figure window
-clf
-
 % Import the data from the file
-CHLORIDE_DATA_NAME = input('Please input the quantitative analysis data for water quality: ','s');
+CHLORIDE_DATA_NAME = input('Please input the quantitative analysis data for water quality: ', 's');
 CHLORIDE_DATA = readFile(CHLORIDE_DATA_NAME);
 
 THRESHOLD = input('Type a threshold value: ');
 CONVERTED = .33.*CHLORIDE_DATA(:,7);
+
+% Clear the figure window
+clf;
 
 % Plot the chloride data
 plot(CHLORIDE_DATA(:,1), CONVERTED);
